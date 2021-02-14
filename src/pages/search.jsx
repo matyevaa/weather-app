@@ -2,13 +2,6 @@
 import React, { useState } from 'react';
 import ErrorPage from "./error";
 import { Global, css, jsx } from '@emotion/react';
-import WeatherData from './weatherData';
-
-
-const api = {
-  key: "1cb9aeb785ddcade1eef5973db409596",
-  source: "https://api.openweathermap.org/data/2.5/"
-}
 
 
 const btn = css`
@@ -63,36 +56,29 @@ const nav = css`
   margin-top: 35px;
 `;
 
-export default function Search() {
 
-  const [query, setQuery] = useState('');
-  const [weather, setWeather] = useState(null);
+const SearchCity = ({onSearch}) => {
+    const [city, setCity] = useState('');
 
-  const hitEnter = (e) =>  {
-    if (e.key === "Enter")
-      search();
+    const hitEnter = (e) =>  {
+      if (e.key === "Enter")
+        onSearch(city);
+    };
+
+    return (
+          <div css={nav}>
+            <input
+              css={searchStyle}
+              onChange={(event) => setCity(event.target.value)}
+              value={city}
+              placeholder="Search by city name"
+              onKeyPress={hitEnter}
+            />
+          <button css={btn} onClick={() => onSearch(city)}>Go</button>
+          </div>
+
+    );
   };
 
-  const search = (e) => {
-        fetch(`${api.source}forecast?q=${query}&units=imperial&APPID=${api.key}`)
-          .then(res => res.json())
-          .then(result => {
-            setWeather(result);
-            console.log(weather);
-          });
-  }
 
-  return (
-    <div>
-      <div css={nav}>
-        <input type="text" className="searchBar" css={searchStyle} placeholder="Search by city name" onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-        <button css={btn} onClick={() => search(query)}>Go</button>
-      </div>
-
-      <div className="wrapper">
-        <WeatherData forecasts={weather}/>
-      </div>
-
-    </div>
-  );
-}
+export default SearchCity;
