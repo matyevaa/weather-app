@@ -47,13 +47,13 @@ const searchStyle = css`
     font-size: 18px;
     position: relative;
     margin: 7px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   `;
 
 const nav = css`
   display: flex;
   justify-content: center;
-  margin-top: 35px;
+  margin-top: 20px;
 `;
 
 
