@@ -8,7 +8,7 @@ import SearchCity from './pages/search'
 import WeatherData from './pages/weatherData';
 import ErrorPage from "./pages/error";
 import Logo from "./images/logo.png";
-
+import Wall1 from "./images/landscape1.jpg";
 
 function App() {
 
@@ -16,15 +16,13 @@ function App() {
 
   const content = () => {
     if(error) return <ErrorPage/>
-    if(!data && isLoading) return <h2>Wait a min...</h2>
+    if(!data && isLoading) return <h2 css={justify}>Wait a min...</h2>
     if(!data) return null;
     return <WeatherData forecasts={data.list} />
   };
 
-  const image = "https://img5.goodfon.com/original/1366x768/c/98/oborotov-aleksei-kyrgyzstan-kirgiziia-sredniaia-aziia-gory-k.jpg";
-
   const backImg = css`
-    background-image: url(${image});
+    background-image: url(${Wall1});
   `;
 
   const bars = css`
@@ -32,12 +30,24 @@ function App() {
     width: 96px;
   `;
 
-  const center = css`
+  const justify = css`
     display: flex;
     justify-content: center;
+  `;
+
+  const center = css`
+    ${justify};
     margin-top: 10px;
     margin-bottom: -15px;
   `;
+
+  const foot = css`
+    color: white;
+    margin-top: 30px;
+    float: right;
+    opacity: 0.3;
+  `;
+
 
   return (
     <div>
@@ -59,6 +69,7 @@ function App() {
           <SearchCity onSearch={(city) => setUrl(`${API_SOURCE}/data/2.5/forecast?q=${city}&cnt=5&units=imperial&appid=${API_KEY}`)} />
           {content()}
         </div>
+        <footer css={foot}>Copyright © 2021 Ilbirs For. All Rights Reserved.</footer>
       </div>
     );
 }

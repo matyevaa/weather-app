@@ -11,7 +11,6 @@ const align = css`
 `;
 
 const wrapper = css`
-
   border-style: ridge;
   width: 70rem;
   text-align: center;
