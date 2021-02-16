@@ -43,9 +43,10 @@ function App() {
 
   const foot = css`
     color: white;
-    margin-top: 30px;
-    float: right;
     opacity: 0.3;
+    bottom: 0;
+    position: absolute;
+    right: 0;
   `;
 
 
