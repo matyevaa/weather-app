@@ -4,7 +4,7 @@
 
 The primary goal of this assignment is to practice fetching data from an HTTP API and using Emotion to style the components of an app.  Specifically, you'll use the [OpenWeather API](https://openweathermap.org/api) create a simple weather app that can display a daily forecast for a city specified by the user.
 
-Follow the link to see the website: https://matyevaa.github.io/weather-app/ or see the demo below:
+Please refer to the demo below:
 
 ![Screen capture of full app demo](src/images/weather-app-demo.gif)
 
