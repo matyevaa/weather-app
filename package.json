@@ -16,6 +16,7 @@
     "react-scripts": "^4.0.1",
     "styled-components": "^5.2.1"
   },
+  "homepage": "https://matyevaa.github.io/weather-app",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
