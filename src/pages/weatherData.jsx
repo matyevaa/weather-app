@@ -14,7 +14,7 @@ const wrapper = css`
   border-style: ridge;
   width: 70rem;
   text-align: center;
-  background: rgba(255,255,255, 0.6);
+  background: rgba(255,255,255, 0.9);
   ${align};
 `;
 

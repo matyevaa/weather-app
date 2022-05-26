@@ -23,6 +23,7 @@ function App() {
 
   const backImg = css`
     background-image: url(${Wall1});
+    background-size: cover;
   `;
 
   const bars = css`
